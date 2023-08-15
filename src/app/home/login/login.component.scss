@@ -1,0 +1,79 @@
+.content-wrapper{
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.login-container{
+    background-image: url('../../../assets/images/login-wallpaper.jpg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+}
+.login-block{
+    position: absolute;
+    height: 70vh;
+    width: 40%;
+    right: 10%;
+    top: 10%;
+    // background-color: #fff;
+    box-shadow: 5px 5px 15px #aaaaaa;
+}
+
+.login-form{
+    display: grid;
+    width: 60%;
+    margin: auto;
+    padding: 25% 0;
+    &__input{
+        padding: 10px 20px;
+        margin: 10px 0;
+        border: none;
+        font-size: 18px;
+    }
+    &--btn{
+        background-color: #478dc0;
+        color: #fff;
+        cursor: pointer;
+    }
+    &__msg{
+        color: red;
+        text-align: center;
+    }
+    &__new{
+        text-align: center;
+        color: #478dc0;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 1000px) and (min-width:601px){
+    .login-block{
+        right: 20%;
+        width: 60%;
+        height: 50vh;
+        top: 20%;   
+    }
+    .login-form{
+        width: 80%;
+        &__input{
+            font-size: 16px;
+        }
+    }
+
+}
+@media (max-width: 600px){
+    .login-block{
+        width: 80%;
+        height: 50vh;
+        top: 20%;
+    }
+    .login-form{
+        width: 80%;
+        &__input{
+            font-size: 12px;
+        }
+    }
+}
