@@ -1,0 +1,61 @@
+<div class="employee-container">
+    <form class="view-form">
+        <!-- form header -->
+        <div class="form-header">
+            <h1>Employee Details</h1>
+        </div>
+
+        <!-- form body -->
+        <div class="form-body" *ngIf="employee">
+
+            <!-- Image -->
+            <div class="dp"> 
+                <img src= "{{employee._image}}" alt="Profile" class="dp__image">
+            </div>
+            <!-- Name and Designation -->
+            <div class="horizontal-group">
+                <div class="form-group left">
+                    <label for="Name" class="label-title">Name</label> : {{employee.name}}
+                </div>
+
+                <div class="form-group right">
+                    <label for="Designation" class="label-title">Designation</label> : {{employee.designation}}
+                </div>
+            </div>
+        
+            <!-- Age and DOB -->
+            <div class="horizontal-group">
+                <div class="form-group left">
+                    <label for="Age" class="label-title">Age</label> : {{employee.age}}
+                </div>
+
+                <div class="form-group right">
+                    <label for="dob" class="label-title">DOB</label> : {{employee.dob}}
+                </div>
+            </div>
+            <!-- Email and Phone-->
+            <div class="horizontal-group">
+                <div class="form-group left">
+                    <label for="email" class="label-title">Email</label> : {{employee.email}}
+                </div>
+                <div class="form-group right">
+                    <label for="phone" class="label-title">Mobile Number</label> : {{employee.mobile}}
+                </div>
+            </div>
+            <!-- Gender and Blood Group-->
+            <div class="horizontal-group">
+                <div class="form-group left">
+                    <label class="label-title">Gender</label> : {{employee.gender}}
+                </div>
+                <div class="form-group right">
+                    <label for="blood" class="label-title">Blood Group</label> : {{employee.bloodGroup}}
+                </div>
+            </div>
+            
+        </div>
+    </form>
+    <div class="leave-container">
+        <app-leave-status></app-leave-status>
+    </div>
+</div>
+

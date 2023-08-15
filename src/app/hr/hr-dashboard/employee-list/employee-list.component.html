@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="container__top">
+      <div class="container__top-item">
+        <!-- Doughnut Chart -->
+        <app-doughnut-chart></app-doughnut-chart>
+  
+      </div>
+      <div class="container__top-item2">
+        <!-- Bar Chart -->
+        <app-bar-chart></app-bar-chart>
+  
+      </div>
+    </div>
+    <div class="container__bottom">
+      <!-- Leave Details -->
+      <h2>Leave Applications</h2>
+      <table>
+        <thead>
+          <th>No.</th>
+          <th>Name</th>
+          <th>Designation</th>
+          <th>Leave Date</th>
+          <th>Reason</th>
+          <th>Status</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let leaves of leaveApplications">
+            <td>{{leaves.id}}</td>
+            <td>{{leaves.name}}</td>
+            <td>{{leaves.designation}}</td>
+            <td>{{leaves.leaveFrom}} To {{leaves.leaveTo}}</td>
+            <td>{{leaves.reason}}</td>
+            <td>
+          <tr>
+            <td class="btn-data"><button class="btn-data__btn" *ngIf="isApproved" (click)="isRejected=false">Approved</button></td>
+            <td class="btn-data"><button class="btn-data__btn" *ngIf="isRejected" (click)="isApproved=false">Rejected</button></td>
+          </tr>
+          </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

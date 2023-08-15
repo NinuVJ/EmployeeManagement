@@ -1,0 +1,17 @@
+<div class="form-header">
+    <h1>Leave Details</h1>
+</div>
+<table>
+    <thead>
+        <th>Applied Date</th>
+        <th>Leave Date</th>
+        <th>Leave Status</th>
+    </thead>
+    <tbody>
+        <tr *ngIf="leave">
+            <td>{{leave.appliedOn}}</td>
+            <td>{{leave.leaveFrom}} To {{leave.leaveTo}}</td>
+            <td>{{leave.status}}</td>
+        </tr>
+    </tbody>
+</table>

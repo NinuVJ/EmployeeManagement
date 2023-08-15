@@ -1,0 +1,147 @@
+{
+  "register": [
+    {
+      "username": "ninujohnson247@gmail.com",
+      "password": "1234",
+      "id": 1
+    },
+    {
+      "username": "jo@gmail.com",
+      "password": "1234",
+      "id": 2
+    },
+    {
+      "username": "maria@gmail.com",
+      "password": "1234",
+      "id": 3
+    }
+  ],
+  "login": [],
+  "employees": [
+    {
+      "designation": "web developer",
+      "name": "Ninu ",
+      "age": "27",
+      "dob": "1995-10-19",
+      "email": "ninujohnson247@gmail.com",
+      "mobile": "+91 9995268137",
+      "gender": "female",
+      "bloodGroup": "B+ve",
+      "_image": "../../../assets/images/dp1.jpeg",
+      "id": 1
+    },
+    {
+      "designation": "app developer",
+      "name": "Joakim",
+      "age": "20",
+      "dob": "2002-04-04",
+      "email": "jo@gmail.com",
+      "mobile": "+91 7025490000",
+      "gender": "male",
+      "bloodGroup": "B+ve",
+      "_image": "../../../assets/images/dp1.jpeg",
+      "id": 2
+    },
+    {
+      "designation": "ui designer",
+      "name": "Maria",
+      "age": "29",
+      "dob": "2001-06-30",
+      "email": "maria@gmail.com",
+      "mobile": "+91 7025111111",
+      "gender": "female",
+      "bloodGroup": "AB+ve",
+      "_image": "C:\\fakepath\\dp3.jpeg",
+      "id": 3
+    },
+    {
+      "designation": "ui designer",
+      "name": "Sini",
+      "age": "32",
+      "dob": "1991-03-30",
+      "email": "sini@gmail.com",
+      "mobile": "+91 7025495555",
+      "gender": "female",
+      "bloodGroup": "AB+ve",
+      "_image": "C:\\fakepath\\dp3.jpeg",
+      "id": 4
+    },
+    {
+      "designation": "web developer",
+      "name": "Ammu",
+      "age": "33",
+      "dob": "2023-08-11",
+      "email": "ammu@gmail.com",
+      "mobile": "+91 7025498454",
+      "gender": "female",
+      "bloodGroup": "AB-ve",
+      "_image": "C:\\fakepath\\dp3.jpeg",
+      "id": 5
+    },
+    {
+      "designation": "app developer",
+      "name": "Zack",
+      "age": "22",
+      "dob": "1997-06-30",
+      "email": "zachie@gmail.com",
+      "mobile": "+91 9995268137",
+      "gender": "male",
+      "bloodGroup": "B+ve",
+      "_image": "C:\\fakepath\\dp3.jpeg",
+      "id": 6
+    },
+    {
+      "designation": "web developer",
+      "name": "Zain",
+      "age": "24",
+      "dob": "2023-08-02",
+      "email": "zain@gmail.com",
+      "mobile": "+91 5543456783",
+      "gender": "male",
+      "bloodGroup": "AB+ve",
+      "_image": "C:\\fakepath\\dp3.jpeg",
+      "id": 7
+    },
+    {
+      "designation": "app developer",
+      "name": "testtt",
+      "age": "55",
+      "dob": "2023-08-02",
+      "email": "jo@gmail.com",
+      "mobile": "+91 5543456783",
+      "gender": "female",
+      "bloodGroup": "AB-ve",
+      "_image": "C:\\fakepath\\dp3.jpeg",
+      "id": 8
+    }
+  ],
+  "leaves": [
+    {
+      "type": "sick",
+      "leaveFrom": "2023-08-12",
+      "leaveTo": "2023-08-16",
+      "reason": "sick",
+      "status": "Pending",
+      "appliedOn": "8/11/2023",
+      "id": 1
+    },
+    {
+      "type": "casual",
+      "leaveFrom": "2023-08-31",
+      "leaveTo": "2023-08-31",
+      "reason": "personal",
+      "status": "Pending",
+      "appliedOn": "8/11/2023",
+      "id": 2
+    },
+    {
+      "type": "sick",
+      "leaveFrom": "2023-08-10",
+      "leaveTo": "2023-08-12",
+      "reason": "sick",
+      "status": "Pending",
+      "appliedOn": "8/14/2023",
+      "id": 3
+    }
+  ]
+}

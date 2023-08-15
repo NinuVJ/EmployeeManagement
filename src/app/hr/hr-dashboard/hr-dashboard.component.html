@@ -1,0 +1,45 @@
+<div class="content-wrapper">
+    <!--Main Navigation-->
+    <header>
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <div class="position-sticky">
+          <div class="list-group list-group-flush mx-3 mt-4">
+            <a routerLink="/hr/dashboard" class="list-group-item py-3 ripple">
+              <img src="../../../assets/images/dashboard.png" class="sidebar__icon"><span>Dashboard</span>
+            </a>
+            <a routerLink="/hr/details" class="list-group-item py-3 ripple">
+              <img src="../../../assets/images/info.png" class="sidebar__icon"><span>Employee Details</span>
+            </a>
+            <a routerLink="/login" class="list-group-item py-5 ripple">
+              <img src="../../../assets/images/logout.png" class="sidebar__icon"><span>Logout</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <!-- Sidebar -->
+    
+      <!-- Navbar -->
+      <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="../../../assets/images/logo.png" height="25" alt="Logo" loading="lazy" />
+          </a>
+          <div class="navbar-nav ms-auto d-flex flex-row">
+            <button routerLink="/hr/addemployee" class="btn btn-primary">Add Employee</button>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar -->
+    </header>
+    <!--Main Navigation-->
+    
+    <!--Main layout-->
+    <main class="dashboard-content"  >
+    
+      <router-outlet></router-outlet>
+      
+    </main>
+    <!--Main layout-->
+    
+    </div>

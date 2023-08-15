@@ -1,0 +1,44 @@
+<div class="leave-container">
+    <form class="add-form" #leaveForm="ngForm" (ngSubmit)="getLeaveFormData(leaveForm.value)">
+        <!-- form header -->
+        <div class="form-header">
+            <h1>Leave Application</h1>
+        </div>
+
+        <!-- form body -->
+        <div class="form-body">
+
+            <!-- Leave Type -->
+            <div class="form-group">
+                <label for="type" class="label-title">Type of Leave</label>
+                <select class="form-input" ngModel name="type">
+                    <option value="sick">Sick Leave</option>
+                    <option value="casual">Casual Leave</option>
+                </select>
+            </div>
+            <!-- Leave Date -->
+            <div class="horizontal-group">
+                <div class="form-group left">
+                    <label for="start" class="label-title">Leave From</label>
+                    <input type="date" ngModel name="leaveFrom" id="start" class="form-input">
+                </div>
+                <div class="form-group right">
+                    <label for="end" class="label-title">Leave To</label>
+                    <input type="date" ngModel name="leaveTo" id="end" class="form-input">
+                </div>
+            </div>
+            <!-- Reason -->
+            <div class="form-group">
+                <label for="reason" class="label-title">Reason for Leave</label>
+                <textarea class="form-input" rows="4" cols="50" style="height:auto" ngModel name="reason"></textarea>
+            </div>
+        </div>
+        <input type="hidden" [(ngModel)]="status" name="status" >
+       
+        <input type="hidden" [(ngModel)]="appliedOn" name="appliedOn" >
+        <!-- form footer -->'
+        <div class="form-footer">
+            <button type="submit" class="btn">Apply</button>
+        </div>
+    </form>
+</div>

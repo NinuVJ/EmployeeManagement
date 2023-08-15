@@ -1,0 +1,130 @@
+
+<div class="details-container">
+    <table>
+        <thead>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>DOB</th>
+            <th>Blood Group</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Mobile No.</th>
+            <th>Image</th>
+            <th>Update</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employeeDetails">
+                <td>{{employee.id}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.age}}</td>
+                <td>{{employee.dob}}</td>
+                <td>{{employee.bloodGroup}}</td>
+                <td>{{employee.gender}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.mobile}}</td>
+                <td><img src="{{employee._image}}" alt="image" width="60"></td>
+                <td><tr>
+                        <td class="btn-data"><button class="btn-data__btn"  
+                          data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                          (click)="onEditClicked(employee.id)" >Edit</button></td>
+                        <td class="btn-data"><button class="btn-data__btn"
+                          (click)="OnDeleteEmployee(employee.id)">Delete</button></td>
+                    </tr>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Edit Employee</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+          <div class="employee-container">
+            <form class="add-form" #employeeForm="ngForm" (ngSubmit)="onUpdateEmployee(employeeForm.value)">
+                <!-- form body -->
+                <div class="form-body">
+        
+                    <!-- Designation -->
+                    <div class="form-group">
+                        <label for="Designation" class="label-title">Designation </label>
+                        <select class="form-input" name="designation" ngModel>
+                            <option value="web developer">Web Developer</option>
+                            <option value="app developer">App Developer</option>
+                            <option value="ui designer">UI/UX Designer</option>
+                        </select>
+                    </div>
+                    <!-- Name -->
+                    <div class="form-group">
+                        <label for="Name" class="label-title">Name </label>
+                        <input type="text" ngModel name="name" class="form-input" placeholder="enter your Name" required="required" />
+                    </div>
+                    <!-- Age and DOB -->
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                            <label for="Age" class="label-title">Age</label>
+                            <input type="text" ngModel name="age"  class="form-input">
+                        </div>
+        
+                        <div class="form-group right">
+                            <label for="dob" class="label-title">DOB</label>
+                            <input type="date" ngModel name="dob" class="form-input">
+                        </div>
+                    </div>
+                    <!-- Email and Phone-->
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                            <label for="email" class="label-title">Email </label>
+                            <input type="email" ngModel name="email" class="form-input" placeholder="enter your email" required="required">
+                        </div>
+                        <div class="form-group right">
+                            <label for="phone" class="label-title">Mobile Number </label>
+                            <input type="tel"  ngModel name="mobile" class="form-input" placeholder="enter your contact number" required="required">
+                        </div>
+                    </div>
+                    <!-- Gender and Blood Group-->
+                    <div class="horizontal-group">
+                        <div class="form-group left">
+                            <label class="label-title">Gender:</label>
+                            <div class="input-group">
+                                <label for="male" class="label-gender">
+                                    <input type="radio" ngModel name="gender" value="male" id="male"> Male</label>
+                                <label for="female" class="label-gender">
+                                    <input type="radio" ngModel name="gender" value="female" id="female"> Female</label>
+                            </div>
+                        </div>
+                        <div class="form-group right">
+                            <label for="blood" class="label-title">Blood Group</label>
+                            <select class="form-input"  name="bloodGroup" ngModel>
+                                <option value="A+ve">A+ve</option>
+                                <option value="B+ve">B+ve</option>
+                                <option value="AB+ve">AB+ve</option>
+                                <option value="O+ve">O+ve</option>
+                                <option value="B-ve">B-ve</option>
+                                <option value="AB-ve">AB-ve</option>
+                            </select>
+                        </div>
+                    </div>
+               
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <input type="submit" value="Edit" class="btn btn-primary" data-bs-dismiss="modal" >
+                </div>
+            </form>
+        </div>
+        
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
