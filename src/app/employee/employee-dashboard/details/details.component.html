@@ -9,8 +9,8 @@
         <div class="form-body" *ngIf="employee">
 
             <!-- Image -->
-            <div class="dp"> 
-                <img src= "{{employee._image}}" alt="Profile" class="dp__image">
+            <div class="dp">
+                <img src="{{employee._image}}" alt="Profile" class="dp__image">
             </div>
             <!-- Name and Designation -->
             <div class="horizontal-group">
@@ -22,7 +22,7 @@
                     <label for="Designation" class="label-title">Designation</label> : {{employee.designation}}
                 </div>
             </div>
-        
+
             <!-- Age and DOB -->
             <div class="horizontal-group">
                 <div class="form-group left">
@@ -51,11 +51,10 @@
                     <label for="blood" class="label-title">Blood Group</label> : {{employee.bloodGroup}}
                 </div>
             </div>
-            
+
         </div>
     </form>
     <div class="leave-container">
         <app-leave-status></app-leave-status>
     </div>
 </div>
-

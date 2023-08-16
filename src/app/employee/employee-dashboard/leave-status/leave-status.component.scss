@@ -1,21 +1,26 @@
-table,th,td{
-    padding: 5px 10px;
-    border: 1px solid #478dc0;
+table,
+th,
+td {
+  padding: 5px 10px;
+  border: 1px solid #478dc0;
 }
-table{
+
+table {
   margin-left: auto;
   margin-right: auto;
   width: 80%;
 }
-.form-header  {
-    background-color: #EFF0F1;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    h1 {
-        font-size: 30px;
-        text-align:center;
-        color:#666;
-        padding:20px 0;
-        border-bottom:1px solid #cccccc;
-      }  
+
+.form-header {
+  background-color: #EFF0F1;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  h1 {
+    font-size: 30px;
+    text-align: center;
+    color: #666;
+    padding: 20px 0;
+    border-bottom: 1px solid #cccccc;
   }
+}

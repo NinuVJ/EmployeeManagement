@@ -13,8 +13,6 @@ import { BarChartComponent } from './hr-dashboard/bar-chart/bar-chart.component'
 import { DoughnutChartComponent } from './hr-dashboard/doughnut-chart/doughnut-chart.component';
 import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
 
-
-
 @NgModule({
   declarations: [
     HrDashboardComponent,

@@ -8,20 +8,20 @@ import { EditDetailsComponent } from './edit-details/edit-details.component';
 import { authenticationGuard } from '../core/guards/authentication.guard';
 
 const routes: Routes = [
-  
-    {path:'employee', component: EmployeeDashboardComponent,
 
-     children:[
-      { path:'',  component: DetailsComponent},
-      { path:'dashboard', component: DetailsComponent},
-      { path: 'leave' ,component: ApplyLeaveComponent},
-      { path: 'editemployee', component: EditDetailsComponent}
-      
-     ] }
-  ];
+  {
+    path: 'employee', component: EmployeeDashboardComponent, canActivate: [authenticationGuard],
+    children: [
+      { path: '', component: DetailsComponent },
+      { path: 'dashboard', component: DetailsComponent },
+      { path: 'leave', component: ApplyLeaveComponent },
+      { path: 'editemployee', component: EditDetailsComponent }
+    ]
+  }
+];
 
-  @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
-  })
-  export class EmployeeRoutingModule { }
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class EmployeeRoutingModule { }

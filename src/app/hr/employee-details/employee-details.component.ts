@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -13,47 +13,43 @@ import Swal from 'sweetalert2';
 })
 export class EmployeeDetailsComponent {
 
-  employeeDetails:any[] =[];
+  employeeDetails: any[] = [];
 
-  currentEmployeeId:any;
-  @ViewChild('employeeForm') form:NgForm | undefined;
+  currentEmployeeId: any;
+  @ViewChild('employeeForm') form: NgForm | undefined;
   thumbnail: any;
 
-  constructor(private http:HttpClient,private employeeService:EmployeeDataService, private sanitizer:DomSanitizer){  }
+  constructor(private http: HttpClient, private employeeService: EmployeeDataService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.getEmployeeDetails();
   }
 
-  getEmployeeDetails():void{
-    this.employeeService.getEmployees().subscribe(details=>{
-      this.employeeDetails = details; 
-      
-      // let objectURL = 'data:image/jpeg;base64,' +this.employeeDetails.image;
-      // this.thumbnail = this.sanitizer.bypassSecurityTrustUrl(objectURL);
-  
+  getEmployeeDetails(): void {
+    this.employeeService.getEmployees().subscribe(details => {
+      this.employeeDetails = details;
     });
   }
 
-  onEditClicked(id:string){
+  onEditClicked(id: string) {
     this.currentEmployeeId = id;
-    let currentEmployee = this.employeeDetails.find((p: { id: string; }) => { return p.id ===id});
+    let currentEmployee = this.employeeDetails.find((p: { id: string; }) => { return p.id === id });
     console.log(currentEmployee);
 
     this.form?.setValue({
-      designation : currentEmployee.designation,
-      name : currentEmployee.name,
-      age : currentEmployee.age,
-      dob : currentEmployee.dob,
-      email : currentEmployee.email,
-      mobile : currentEmployee.mobile,
-      gender : currentEmployee.gender,
-      bloodGroup : currentEmployee.bloodGroup
-    });  
+      designation: currentEmployee.designation,
+      name: currentEmployee.name,
+      age: currentEmployee.age,
+      dob: currentEmployee.dob,
+      email: currentEmployee.email,
+      mobile: currentEmployee.mobile,
+      gender: currentEmployee.gender,
+      bloodGroup: currentEmployee.bloodGroup
+    });
   }
 
-  onUpdateEmployee(details:{}){
-    this.http.put('http://localhost:3000/employees/'+this.currentEmployeeId, details).subscribe();
+  onUpdateEmployee(details: {}) {
+    this.http.put('http://localhost:3000/employees/' + this.currentEmployeeId, details).subscribe();
     this.getEmployeeDetails();
 
     Swal.fire({
@@ -66,8 +62,8 @@ export class EmployeeDetailsComponent {
 
   }
 
-  OnDeleteEmployee(id:string){
-  
+  OnDeleteEmployee(id: string) {
+
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -76,9 +72,9 @@ export class EmployeeDetailsComponent {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Yes, delete it!'
-    }).then((result:any) => {
+    }).then((result: any) => {
       if (result.isConfirmed) {
-        this.http.delete('http://localhost:3000/employees/'+id).subscribe();
+        this.http.delete('http://localhost:3000/employees/' + id).subscribe();
         this.getEmployeeDetails();
         Swal.fire(
           'Deleted!',
@@ -89,5 +85,4 @@ export class EmployeeDetailsComponent {
     })
   }
 
-  
 }

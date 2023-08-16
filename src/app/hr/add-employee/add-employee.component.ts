@@ -9,25 +9,22 @@ import { EmployeeDataService } from '../../core/services/employee-data.service';
 export class AddEmployeeComponent {
   employees: any;
   fileName!: File;
+  public role = "employee";
   constructor(private employeeData: EmployeeDataService) { }
 
-  onFileSelected(e:any){
-    if(e.target.files){
+  onFileSelected(e: any) {
+    if (e.target.files) {
       var reader = new FileReader();
       reader.readAsDataURL(e.target.files[0]);
-      reader.onload = (event:any)=>{
+      reader.onload = (event: any) => {
         this.fileName = event.target.result;
       }
     }
   }
 
-
   getEmployeeFormData(data: any) {
     this.employeeData.saveEmployee(data).subscribe((result) => {
-      console.log(result);
-
     })
   }
-  
 
 }

@@ -6,8 +6,6 @@ import { RegisterComponent } from './register/register.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
-
-
 @NgModule({
   declarations: [
     LoginComponent,

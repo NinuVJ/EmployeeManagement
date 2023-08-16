@@ -33,9 +33,10 @@
                 <textarea class="form-input" rows="4" cols="50" style="height:auto" ngModel name="reason"></textarea>
             </div>
         </div>
-        <input type="hidden" [(ngModel)]="status" name="status" >
-       
-        <input type="hidden" [(ngModel)]="appliedOn" name="appliedOn" >
+        <input type="hidden" [(ngModel)]="status" name="status">
+        <input type="hidden" [(ngModel)]="name" name="name">
+        <input type="hidden" [(ngModel)]="designation" name="designation">
+        <input type="hidden" [(ngModel)]="appliedOn" name="appliedOn">
         <!-- form footer -->'
         <div class="form-footer">
             <button type="submit" class="btn">Apply</button>

@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import {LoginService } from '../../core/services/login.service';
-import { RegisterService } from 'src/app/core/services/register.service';
+import { LoginService } from '../../core/services/login.service';
 import { Router } from '@angular/router';
-import { find } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -11,45 +9,42 @@ import { find } from 'rxjs';
 })
 export class LoginComponent {
 
-  username ="";
-  password ="";
-  errorMsg ="";
+  username = "";
+  password = "";
+  errorMsg = "";
   userId: any;
   logedIn = true;
 
-  constructor(private loginService:LoginService, private router :Router){}
+  constructor(private loginService: LoginService, private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  login() {
     this.findId();
-    
-}
-login(){
-  this.loginService.login().subscribe(res=>{
-     const user = res.find((a:any)=>{
-      return a.username === this.username && a.password === this.password
-    });
-    if(user){
-      this.logedIn=true;
-      this.router.navigate(['employee'])
-    }else if(this.username === 'hr' && this.password === '1234'){
-      this.logedIn=true;
-      this.router.navigate(['hr'])
-    }else{
-      this.errorMsg = "Invalid credentials";
-    }
-  })
+    localStorage.setItem('token', Math.random().toString());
+    this.loginService.login().subscribe(res => {
+      const user = res.find((a: any) => {
+        return a.username === this.username && a.password === this.password
+      });
 
-this.findId();
+      if (user) {
+        this.logedIn = true;
+        this.router.navigate(['employee'])
+      } else if (this.username === 'hr' && this.password === '1234') {
+        this.logedIn = true;
+        this.router.navigate(['hr'])
+      } else {
+        this.errorMsg = "Invalid credentials";
+      }
+    })
 
-}  
+  }
 
-  findId(){
-    this.loginService.getId().subscribe(result=>{
-         result.find((b:any)=>{
-        if(b.email === this.username){
-          console.log("current user id = "+b.id);
-          this.userId =b.id;
-          return b.id;
+  findId() {
+    this.loginService.getId().subscribe(result => {
+      result.find((b: any) => {
+        if (b.email === this.username) {
+          localStorage.setItem('localUserData', JSON.stringify(b));
         }
       });
     });

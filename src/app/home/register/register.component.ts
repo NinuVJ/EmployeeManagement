@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RegisterService } from '../../core/services/register.service';
 
 @Component({
@@ -6,20 +6,15 @@ import { RegisterService } from '../../core/services/register.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit{
+export class RegisterComponent  {
 
- registerUserData = {};
+  registerUserData = {};
+  constructor(private registerService: RegisterService) { }
 
-  constructor(private registerService:RegisterService){}
+  register(data: any) {
+    this.registerService.registerUser(data).subscribe((res) => {
+      console.log(res)
 
-  ngOnInit(): void {
-    
+    })
   }
-
-  register(data:any){
-      this.registerService.registerUser(data).subscribe((res)=> {
-        console.log(res)
-
-      })
-    }
-  }
+}

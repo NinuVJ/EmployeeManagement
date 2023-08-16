@@ -10,7 +10,7 @@ import { LoginComponent } from '../../../home/login/login.component';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss']
 })
-export class DetailsComponent {
+export class DetailsComponent implements OnInit {
 
   employee: any;
   thumbnail: any;
@@ -23,12 +23,10 @@ export class DetailsComponent {
     this.getEmployeeDetails();
   }
 
-
   getEmployeeDetails() {
-    // this.userId = this.login.userId;
-    this.http.get('http://localhost:3000/employees/2').subscribe(details => {
-      this.employee = details;
-    })
+    const userData = localStorage.getItem('localUserData');
+    if (userData != null) {
+      this.employee = JSON.parse(userData);
+    }
   }
-
 }

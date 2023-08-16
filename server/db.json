@@ -16,18 +16,28 @@
       "id": 3
     }
   ],
-  "login": [],
+  "login": [
+    {
+      "username": "hr",
+      "password": "1234",
+      "role": "hr",
+      "id": 1
+    }
+  ],
   "employees": [
     {
+      "email": "hr",
+      "role": "hr"
+    },
+    {
       "designation": "web developer",
-      "name": "Ninu ",
+      "name": "Ninu",
       "age": "27",
-      "dob": "1995-10-19",
+      "dob": "2023-08-04",
       "email": "ninujohnson247@gmail.com",
-      "mobile": "+91 9995268137",
+      "mobile": "+91 7025498383",
       "gender": "female",
       "bloodGroup": "B+ve",
-      "_image": "../../../assets/images/dp1.jpeg",
       "id": 1
     },
     {
@@ -40,107 +50,107 @@
       "gender": "male",
       "bloodGroup": "B+ve",
       "_image": "../../../assets/images/dp1.jpeg",
+      "role": "employee",
       "id": 2
     },
     {
-      "designation": "ui designer",
+      "designation": "web developer",
       "name": "Maria",
-      "age": "29",
-      "dob": "2001-06-30",
+      "age": "22",
+      "dob": "2016-06-25",
       "email": "maria@gmail.com",
-      "mobile": "+91 7025111111",
+      "mobile": "+91 9995268130",
       "gender": "female",
       "bloodGroup": "AB+ve",
       "_image": "C:\\fakepath\\dp3.jpeg",
+      "role": "employee",
       "id": 3
     },
     {
-      "designation": "ui designer",
+      "designation": "app developer",
       "name": "Sini",
       "age": "32",
       "dob": "1991-03-30",
       "email": "sini@gmail.com",
-      "mobile": "+91 7025495555",
+      "mobile": "+91 7025491465",
       "gender": "female",
-      "bloodGroup": "AB+ve",
+      "bloodGroup": "O+ve",
       "_image": "C:\\fakepath\\dp3.jpeg",
+      "role": "employee",
       "id": 4
     },
     {
-      "designation": "web developer",
-      "name": "Ammu",
-      "age": "33",
-      "dob": "2023-08-11",
-      "email": "ammu@gmail.com",
-      "mobile": "+91 7025498454",
-      "gender": "female",
+      "designation": "ui designer",
+      "name": "Zack",
+      "age": "25",
+      "dob": "2002-01-01",
+      "email": "zack@gmail.com",
+      "mobile": "+91 7025495555",
+      "gender": "male",
       "bloodGroup": "AB-ve",
       "_image": "C:\\fakepath\\dp3.jpeg",
+      "role": "employee",
       "id": 5
     },
     {
       "designation": "app developer",
-      "name": "Zack",
-      "age": "22",
-      "dob": "1997-06-30",
-      "email": "zachie@gmail.com",
-      "mobile": "+91 9995268137",
+      "name": "Zain",
+      "age": "20",
+      "dob": "2002-06-01",
+      "email": "zain@gmail.com",
+      "mobile": "+91 7025490101",
       "gender": "male",
-      "bloodGroup": "B+ve",
-      "_image": "C:\\fakepath\\dp3.jpeg",
+      "bloodGroup": "B-ve",
+      "_image": "C:\\fakepath\\dp4.jpeg",
+      "role": "employee",
       "id": 6
     },
     {
       "designation": "web developer",
-      "name": "Zain",
-      "age": "24",
-      "dob": "2023-08-02",
-      "email": "zain@gmail.com",
-      "mobile": "+91 5543456783",
-      "gender": "male",
-      "bloodGroup": "AB+ve",
-      "_image": "C:\\fakepath\\dp3.jpeg",
-      "id": 7
-    },
-    {
-      "designation": "app developer",
-      "name": "testtt",
-      "age": "55",
-      "dob": "2023-08-02",
-      "email": "jo@gmail.com",
-      "mobile": "+91 5543456783",
+      "name": "jsha",
+      "age": "21",
+      "dob": "2023-08-10",
+      "email": "joh@gmail.com",
+      "mobile": "+91 7025111111",
       "gender": "female",
-      "bloodGroup": "AB-ve",
-      "_image": "C:\\fakepath\\dp3.jpeg",
-      "id": 8
+      "bloodGroup": "B+ve",
+      "_image": "C:\\fakepath\\dp1.jpeg",
+      "role": "employee",
+      "id": 7
     }
   ],
   "leaves": [
     {
       "type": "sick",
-      "leaveFrom": "2023-08-12",
-      "leaveTo": "2023-08-16",
+      "leaveFrom": "2023-08-17",
+      "leaveTo": "2023-08-19",
       "reason": "sick",
       "status": "Pending",
-      "appliedOn": "8/11/2023",
+      "name": "Ninu",
+      "designation": "web developer",
+      "appliedOn": "8/16/2023",
       "id": 1
     },
     {
       "type": "casual",
-      "leaveFrom": "2023-08-31",
-      "leaveTo": "2023-08-31",
-      "reason": "personal",
+      "leaveFrom": "2023-08-22",
+      "leaveTo": "2023-08-26",
+      "reason": "annual leave",
       "status": "Pending",
-      "appliedOn": "8/11/2023",
+      "name": "Maria",
+      "designation": "web developer",
+      "appliedOn": "8/16/2023",
       "id": 2
     },
     {
       "type": "sick",
-      "leaveFrom": "2023-08-10",
-      "leaveTo": "2023-08-12",
+      "leaveFrom": "2023-08-17",
+      "leaveTo": "2023-08-17",
       "reason": "sick",
       "status": "Pending",
-      "appliedOn": "8/14/2023",
+      "name": "Joakim",
+      "designation": "app developer",
+      "appliedOn": "8/16/2023",
       "id": 3
     }
   ]

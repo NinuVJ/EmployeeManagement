@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-dashboard',
@@ -8,13 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class EmployeeDashboardComponent implements OnInit{
   a:any =[];
 
+constructor(private router :Router){}
  ngOnInit(): void {
-  // this.a = document.getElementsByClassName("list-group-item ");;
-  // if(this.a.click) {
-  //   // (this.a).addClass('active-link');
-  //   (this.a).removeClass('active-link');
-
-  //  }
+ 
+ }
+ logout(){
+  localStorage.clear();
  }
 
 }

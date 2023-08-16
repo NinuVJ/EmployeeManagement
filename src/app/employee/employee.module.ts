@@ -10,8 +10,6 @@ import { EditDetailsComponent } from './edit-details/edit-details.component';
 import { DetailsComponent } from './employee-dashboard/details/details.component';
 import { LeaveStatusComponent } from './employee-dashboard/leave-status/leave-status.component';
 
-
-
 @NgModule({
   declarations: [
     ApplyLeaveComponent,

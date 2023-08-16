@@ -22,6 +22,4 @@ export class LeaveStatusComponent implements OnInit{
       this.leave = status;  
     })
   }
-
-
 }

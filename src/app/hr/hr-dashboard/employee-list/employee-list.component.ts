@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,26 +8,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./employee-list.component.scss']
 })
 export class EmployeeListComponent {
-  isApproved = true;
-  isRejected = true;
+  currentEmployeeId: any;
+  leaveApplications: any;
 
-  leaveApplications:any;
-  constructor(private http:HttpClient,private router:Router){  }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.getLeaveApplications();
   }
 
   getLeaveApplications() {
-     this.http.get('http://localhost:3000/leaves').subscribe(leaves=>{
-      this.leaveApplications = leaves;  
+    this.http.get('http://localhost:3000/leaves').subscribe(leaves => {
+      this.leaveApplications = leaves;
     })
   }
-  Approved(){
-    this.isRejected = false;
+  onUpdateLeaveStatus(id: string, details: string) {
+    this.currentEmployeeId = id;
+    this.http.put('http://localhost:3000/leaves/' + this.currentEmployeeId, details).subscribe();
   }
- Rejected(){
-  this.isApproved = false;
- }
+  getSelectedValue(value: any, id: string) {
+    this.currentEmployeeId = id;
+    console.log("leave status:", id);
+
+    this.http.put('http://localhost:3000/leaves/' + this.currentEmployeeId, value).subscribe();
+  }
 
 }

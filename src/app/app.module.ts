@@ -9,7 +9,6 @@ import { HrModule } from './hr/hr.module';
 import { EmployeeModule } from './employee/employee.module';
 import { LoginComponent } from './home/login/login.component';
 import { DetailsComponent } from './employee/employee-dashboard/details/details.component';
-import { AuthguardService } from './core/services/authguard.service';
 
 @NgModule({
   declarations: [
@@ -25,8 +24,7 @@ import { AuthguardService } from './core/services/authguard.service';
     HomeModule
   ],
   providers: [LoginComponent,
-    DetailsComponent,
-  AuthguardService],
+    DetailsComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,15 +1,15 @@
 <div class="content-wrapper">
     <div class="login-container">
-    </div>
-    <div class="login-block">
-        <form class="login-form">
-            <input type="text" placeholder="Username" class="login-form__input" name="username" [(ngModel)]="username">
-            <input type="password" placeholder="Password" class="login-form__input" name="password" [(ngModel)]="password" >
-            <input type="submit" value="LOGIN" (click)="login()" class="login-form__input login-form--btn">
-            <div class="login-form__msg">{{errorMsg}}</div>
-            <div class="login-form__new" routerLink="/register"> New Employee? Sign up</div>
-        </form>
-            
+        <div class="login-block">
+            <form class="login-form">
+                <input type="text" placeholder="Username" class="login-form__input" name="username"
+                    [(ngModel)]="username">
+                <input type="password" placeholder="Password" class="login-form__input" name="password"
+                    [(ngModel)]="password">
+                <input type="submit" value="LOGIN" (click)="login()" class="login-form__input login-form--btn">
+                <div class="login-form__msg">{{errorMsg}}</div>
+                <div class="login-form__new" routerLink="/register"> New Employee? Sign up</div>
+            </form>
+        </div>
     </div>
 </div>
-
