@@ -14,6 +14,21 @@
       "username": "maria@gmail.com",
       "password": "1234",
       "id": 3
+    },
+    {
+      "username": "zain@gmail.com",
+      "password": "1234",
+      "id": 4
+    },
+    {
+      "username": "hr@gmail.com",
+      "password": "1234",
+      "id": 5
+    },
+    {
+      "username": "sini@gmail.com",
+      "password": "1234",
+      "id": 6
     }
   ],
   "login": [
@@ -26,22 +41,20 @@
   ],
   "employees": [
     {
-      "email": "hr",
-      "role": "hr"
-    },
-    {
-      "designation": "web developer",
-      "name": "Ninu",
+      "designation": "Web Developer",
+      "name": "Ninu John",
       "age": "27",
       "dob": "2023-08-04",
       "email": "ninujohnson247@gmail.com",
       "mobile": "+91 7025498383",
       "gender": "female",
       "bloodGroup": "B+ve",
+      "_image": "../../../assets/images/dp1.jpeg",
+      "role": "employee",
       "id": 1
     },
     {
-      "designation": "app developer",
+      "designation": "App Developer",
       "name": "Joakim",
       "age": "20",
       "dob": "2002-04-04",
@@ -54,7 +67,7 @@
       "id": 2
     },
     {
-      "designation": "web developer",
+      "designation": "Web Developer",
       "name": "Maria",
       "age": "22",
       "dob": "2016-06-25",
@@ -62,12 +75,10 @@
       "mobile": "+91 9995268130",
       "gender": "female",
       "bloodGroup": "AB+ve",
-      "_image": "C:\\fakepath\\dp3.jpeg",
-      "role": "employee",
       "id": 3
     },
     {
-      "designation": "app developer",
+      "designation": "App Developer",
       "name": "Sini",
       "age": "32",
       "dob": "1991-03-30",
@@ -80,7 +91,7 @@
       "id": 4
     },
     {
-      "designation": "ui designer",
+      "designation": "UI/UX Designer",
       "name": "Zack",
       "age": "25",
       "dob": "2002-01-01",
@@ -93,7 +104,7 @@
       "id": 5
     },
     {
-      "designation": "app developer",
+      "designation": "App Developer",
       "name": "Zain",
       "age": "20",
       "dob": "2002-06-01",
@@ -101,12 +112,12 @@
       "mobile": "+91 7025490101",
       "gender": "male",
       "bloodGroup": "B-ve",
-      "_image": "C:\\fakepath\\dp4.jpeg",
-      "role": "employee",
+      "_image": "C:\\fakepath\\dp3.jpeg",
+      "role": "",
       "id": 6
     },
     {
-      "designation": "web developer",
+      "designation": "Web Developer",
       "name": "jsha",
       "age": "21",
       "dob": "2023-08-10",
@@ -117,6 +128,19 @@
       "_image": "C:\\fakepath\\dp1.jpeg",
       "role": "employee",
       "id": 7
+    },
+    {
+      "designation": "HR Manager",
+      "name": "HR",
+      "age": "21",
+      "dob": "2023-08-10",
+      "email": "hr@gmail.com",
+      "mobile": "+91 7025111111",
+      "gender": "female",
+      "bloodGroup": "B+ve",
+      "_image": "C:\\fakepath\\dp1.jpeg",
+      "role": "hr",
+      "id": 8
     }
   ],
   "leaves": [
@@ -127,7 +151,7 @@
       "reason": "sick",
       "status": "Pending",
       "name": "Ninu",
-      "designation": "web developer",
+      "designation": "Web Developer",
       "appliedOn": "8/16/2023",
       "id": 1
     },
@@ -138,7 +162,7 @@
       "reason": "annual leave",
       "status": "Pending",
       "name": "Maria",
-      "designation": "web developer",
+      "designation": "Web Developer",
       "appliedOn": "8/16/2023",
       "id": 2
     },
@@ -147,11 +171,88 @@
       "leaveFrom": "2023-08-17",
       "leaveTo": "2023-08-17",
       "reason": "sick",
-      "status": "Pending",
+      "status": "Approved",
       "name": "Joakim",
-      "designation": "app developer",
+      "designation": "App Developer",
       "appliedOn": "8/16/2023",
       "id": 3
+    },
+    {
+      "type": "casual",
+      "leaveFrom": "2023-08-18",
+      "leaveTo": "2023-08-18",
+      "reason": "personal",
+      "status": "Approved",
+      "name": "Ninu John",
+      "designation": "Web Developer",
+      "appliedOn": "8/18/2023",
+      "id": 4
+    },
+    {
+      "type": "sick",
+      "leaveFrom": "2023-08-18",
+      "leaveTo": "2023-08-19",
+      "reason": "sick",
+      "status": "Approved",
+      "name": "Joakim",
+      "designation": "App Developer",
+      "appliedOn": "2023-08-18",
+      "id": 5
+    },
+    {
+      "type": "sick",
+      "leaveFrom": "2023-08-18",
+      "leaveTo": "2023-08-19",
+      "reason": "sick",
+      "status": "Approved",
+      "name": "KK",
+      "designation": "Data Analyst",
+      "appliedOn": "2023-08-18",
+      "id": 6
+    },
+    {
+      "type": "sick",
+      "leaveFrom": "2023-08-18",
+      "leaveTo": "2023-08-19",
+      "reason": "sick",
+      "status": "Approved",
+      "name": "Sha",
+      "designation": "UI/UX Designer",
+      "appliedOn": "2023-08-18",
+      "id": 7
+    },
+    {
+      "type": "sick",
+      "leaveFrom": "2023-08-18",
+      "leaveTo": "2023-08-19",
+      "reason": "sick",
+      "status": "Approved",
+      "name": "Ali",
+      "designation": "App Developer",
+      "appliedOn": "2023-08-18",
+      "id": 8
+    },
+    {
+      "type": "sick",
+      "leaveFrom": "2023-08-18",
+      "leaveTo": "2023-08-19",
+      "reason": "sick",
+      "status": "Approved",
+      "name": "Diana",
+      "designation": "App Developer",
+      "appliedOn": "2023-08-18",
+      "id": 9
+    },
+    {
+      "type": "sick",
+      "leaveFrom": "2023-08-18",
+      "leaveTo": "2023-08-19",
+      "reason": "sick",
+      "status": "Approved",
+      "name": "Johny",
+      "designation": "App Developer",
+      "appliedOn": "2023-08-18",
+      "id": 10
     }
   ]
 }

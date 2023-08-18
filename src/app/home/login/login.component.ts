@@ -29,10 +29,11 @@ export class LoginComponent {
 
       if (user) {
         this.logedIn = true;
-        this.router.navigate(['employee'])
-      } else if (this.username === 'hr' && this.password === '1234') {
-        this.logedIn = true;
-        this.router.navigate(['hr'])
+        if (this.username === 'hr@gmail.com' && this.password === '1234') {
+          this.router.navigate(['hr'])
+        } else {
+          this.router.navigate(['employee'])
+        }
       } else {
         this.errorMsg = "Invalid credentials";
       }

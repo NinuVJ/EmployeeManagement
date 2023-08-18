@@ -11,7 +11,6 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { EmployeeListComponent } from './hr-dashboard/employee-list/employee-list.component';
 import { BarChartComponent } from './hr-dashboard/bar-chart/bar-chart.component';
 import { DoughnutChartComponent } from './hr-dashboard/doughnut-chart/doughnut-chart.component';
-import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +19,7 @@ import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
     EmployeeDetailsComponent,
     EmployeeListComponent,
     BarChartComponent,
-    DoughnutChartComponent,
-    EditEmployeeComponent
+    DoughnutChartComponent
   ],
   imports: [
     CommonModule,

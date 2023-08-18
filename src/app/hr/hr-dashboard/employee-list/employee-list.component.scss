@@ -44,3 +44,33 @@ table{
     background-color:#fff ;
     color: #478dc0; 
 }
+
+
+@media (max-width: 1000px){
+.container{
+    &__bottom{
+        height:auto;
+        overflow: scroll;
+    }
+}
+}
+
+@media (max-width: 600px) {
+    .container{
+        height: auto;
+        &__top{
+          flex-direction: column;
+          height: 600px;
+        }
+        &__top-item{
+            width: 100%;   
+        }
+        &__top-item2{
+            width: 100%;
+        }
+        &__bottom{
+            height:auto;
+            overflow: scroll;
+        }
+    }
+}

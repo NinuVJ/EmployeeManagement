@@ -17,7 +17,6 @@ export class LeaveStatusComponent implements OnInit{
   }
 
   getLeaveDetails(){
-    // const userId = this.login.userId;
     this.http.get('http://localhost:3000/leaves/2').subscribe(status=>{
       this.leave = status;  
     })

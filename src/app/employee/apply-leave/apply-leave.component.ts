@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LeaveDataService } from '../../core/services/leave-data.service';
+import {formatDate} from '@angular/common';
 
 @Component({
   selector: 'app-apply-leave',
@@ -8,8 +9,8 @@ import { LeaveDataService } from '../../core/services/leave-data.service';
 })
 export class ApplyLeaveComponent implements OnInit {
   currentEmployee: any;
-  currentDate = new Date();
-  public appliedOn = this.currentDate.toLocaleDateString();
+  // public appliedOn = this.currentDate.toLocaleDateString();
+  public appliedOn = formatDate(new Date(), 'yyyy-MM-dd', 'en');;
   public status = "Pending";
   public name = "";
   public designation = "";

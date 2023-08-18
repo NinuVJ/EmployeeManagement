@@ -3,10 +3,10 @@
     </div>
     <div class="login-block">
         <form class="login-form"  #registerForm="ngForm" (ngSubmit)="register(registerForm.value)">
-            <input type="text" placeholder="Enter your Email ID" class="login-form__input" name="username" ngModel>
-            <input type="password" placeholder="Password" class="login-form__input" name="password" ngModel >
+            <input type="text" placeholder="Enter your Email ID" class="login-form__input" name="username" [(ngModel)]="username">
+            <input type="password" placeholder="Password" class="login-form__input" name="password" [(ngModel)]="password" >
             <input type="submit" value="SIGN UP" class="login-form__input login-form--btn">
-            <!-- <div class="login-form__msg">{{errorMsg}}</div> -->
+            <div class="login-form__msg">{{errorMsg}}</div>
             <div class="login-form__new" routerLink="/login"> Already Registered? Login</div>
         </form>
             

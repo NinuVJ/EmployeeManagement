@@ -31,8 +31,9 @@
           <td>{{leaves.leaveFrom}} To {{leaves.leaveTo}}</td>
           <td>{{leaves.reason}}</td>
           <td>
-            <select class="btn-data" name="status" #ref (change)="getSelectedValue(ref.value,leaves.id)">
-              <option value="Pending" selected>Pending</option>
+            <select class="btn-data" name="status" #ref (change)="getSelectedValue(ref.value,leaves.id)" >
+              <option value = "{{leaves.status}}" selected>{{leaves.status}}</option>
+              <option value="Pending">Pending</option>
               <option value="Approved">Approved</option>
               <option value="Rejected">Rejected</option>
             </select>

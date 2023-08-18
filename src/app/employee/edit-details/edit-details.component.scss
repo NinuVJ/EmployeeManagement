@@ -11,11 +11,11 @@
   border-top-right-radius: 10px;
 
   h1 {
-    font-size: 30px;
-    text-align: center;
-    color: #666;
-    padding: 20px 0;
-    border-bottom: 1px solid #cccccc;
+      font-size: 30px;
+      text-align: center;
+      color: #666;
+      padding: 20px 0;
+      border-bottom: 1px solid #cccccc;
   }
 }
 
@@ -52,14 +52,17 @@
   outline: none;
 }
 
-.horizontal-group .left {
-  float: left;
-  width: 49%;
-}
+.horizontal-group {
+  display: flex;
 
-.horizontal-group .right {
-  float: right;
-  width: 49%;
+  .right {
+      margin-left: 10px;
+  }
+
+  .left,
+  .right {
+      width: 49%;
+  }
 }
 
 input[type="file"] {
@@ -102,4 +105,19 @@ input[type="file"] {
 .btn:hover {
   background-color: #478dc0;
   color: white;
+}
+
+@media (max-width: 600px) {
+  .horizontal-group {
+      flex-direction: column;
+
+      .right {
+          margin-left: 0;
+      }
+
+      .left,
+      .right {
+          width: 98%;
+      }
+  }
 }
