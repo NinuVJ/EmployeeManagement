@@ -1,8 +1,8 @@
 <div class="employee-container">
     <form class="view-form">
         <!-- form header -->
-        <div class="form-header">
-            <h1>Employee Details</h1>
+        <div class="form-header"  *ngIf="employee">
+            <h1>Welcome {{employee.name | titlecase}} !</h1>
         </div>
 
         <!-- form body -->

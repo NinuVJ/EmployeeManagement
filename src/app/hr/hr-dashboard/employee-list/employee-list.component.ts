@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import axios from 'axios';
+import { constant } from 'src/app/core/constant/constant';
 
 @Component({
   selector: 'app-employee-list',
@@ -12,14 +12,14 @@ export class EmployeeListComponent {
   currentEmployeeId: any;
   leaveApplications: any;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.getLeaveApplications();
   }
 
   getLeaveApplications() {
-    this.http.get('http://localhost:3000/leaves').subscribe(leaves => {
+    this.http.get(constant.apiEndPoint.allLeaves).subscribe(leaves => {
       this.leaveApplications = leaves;
     })
   }
@@ -30,7 +30,7 @@ export class EmployeeListComponent {
       const updateData = { status: details };
 
       try {
-        const response = await axios.patch(`http://localhost:3000/leaves/${leaveId}`, updateData);
+        const response = await axios.patch(constant.apiEndPoint.allLeaves+leaveId, updateData);
         console.log('Leave status updated successfully:', response.data);
       } catch (error: any) {
         console.error('Error updating leave status:', error.response.data);

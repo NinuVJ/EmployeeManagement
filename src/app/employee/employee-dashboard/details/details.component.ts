@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
-import { DomSanitizer } from '@angular/platform-browser';
-import { LoginService } from '../../../core/services/login.service';
-import { LoginComponent } from '../../../home/login/login.component';
+import { constant } from 'src/app/core/constant/constant';
 
 @Component({
   selector: 'app-details',
@@ -16,8 +13,7 @@ export class DetailsComponent implements OnInit {
   thumbnail: any;
   userId: any;
 
-  constructor(private http: HttpClient, private router: Router, private sanitizer: DomSanitizer,
-    private loginService: LoginService, private login: LoginComponent) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.getEmployeeDetails();
@@ -26,7 +22,11 @@ export class DetailsComponent implements OnInit {
   getEmployeeDetails() {
     const userData = localStorage.getItem('localUserData');
     if (userData != null) {
-      this.employee = JSON.parse(userData);
+      const currentEmployeeDetails = JSON.parse(userData);
+      this.userId = currentEmployeeDetails.id;
+      this.http.get(constant.apiEndPoint.allEmployees + this.userId).subscribe(data => {
+        this.employee = data;
+    });  
     }
   }
 }

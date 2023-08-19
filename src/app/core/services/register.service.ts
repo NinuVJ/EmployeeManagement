@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { constant } from '../constant/constant';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterService {
 
-  private registerUrl = "http://localhost:3000/register";
   constructor(private http: HttpClient) { }
 
   registerUser(user: any) {
-    return this.http.post(this.registerUrl, user)
+    return this.http.post(constant.apiEndPoint.registeredUsers, user)
   }
 }

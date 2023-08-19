@@ -1,10 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { DomSanitizer } from '@angular/platform-browser';
 import { EmployeeDataService } from '../../core/services/employee-data.service';
 import Swal from 'sweetalert2';
+import { constant } from 'src/app/core/constant/constant';
 
 @Component({
   selector: 'app-employee-details',
@@ -19,7 +18,7 @@ export class EmployeeDetailsComponent {
   @ViewChild('employeeForm') form: NgForm | undefined;
   thumbnail: any;
 
-  constructor(private http: HttpClient, private employeeService: EmployeeDataService, private sanitizer: DomSanitizer) { }
+  constructor(private http: HttpClient, private employeeService: EmployeeDataService) { }
 
   ngOnInit(): void {
     this.getEmployeeDetails();
@@ -44,12 +43,14 @@ export class EmployeeDetailsComponent {
       email: currentEmployee.email,
       mobile: currentEmployee.mobile,
       gender: currentEmployee.gender,
-      bloodGroup: currentEmployee.bloodGroup
+      bloodGroup: currentEmployee.bloodGroup,
+      _image : currentEmployee._image,
+      role : currentEmployee.role
     });
   }
 
   onUpdateEmployee(details: {}) {
-    this.http.put('http://localhost:3000/employees/' + this.currentEmployeeId, details).subscribe();
+    this.http.put(constant.apiEndPoint.allEmployees + this.currentEmployeeId, details).subscribe();
     this.getEmployeeDetails();
 
     Swal.fire({
@@ -74,7 +75,7 @@ export class EmployeeDetailsComponent {
       confirmButtonText: 'Yes, delete it!'
     }).then((result: any) => {
       if (result.isConfirmed) {
-        this.http.delete('http://localhost:3000/employees/' + id).subscribe();
+        this.http.delete(constant.apiEndPoint.allEmployees + id).subscribe();
         this.getEmployeeDetails();
         Swal.fire(
           'Deleted!',

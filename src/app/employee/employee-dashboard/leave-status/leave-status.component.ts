@@ -1,7 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
-import { Router } from '@angular/router';
-import { LoginComponent} from '../../../home/login/login.component';
+import { LeaveDataService } from 'src/app/core/services/leave-data.service';
 
 @Component({
   selector: 'app-leave-status',
@@ -10,15 +8,25 @@ import { LoginComponent} from '../../../home/login/login.component';
 })
 export class LeaveStatusComponent implements OnInit{
   leave:any;
+  name:string ="";
 
-  constructor(private http:HttpClient,private router:Router, private login:LoginComponent){  }
+  constructor(private leaveData:LeaveDataService){  }
   ngOnInit(): void {
-    this.getLeaveDetails();
+    this.getLeaveDetails();   
   }
 
   getLeaveDetails(){
-    this.http.get('http://localhost:3000/leaves/2').subscribe(status=>{
-      this.leave = status;  
+    const userData = localStorage.getItem('localUserData');
+    if (userData != null) {
+      const currentEmployeeDetails = JSON.parse(userData);
+      this.name = currentEmployeeDetails.name;
+    }  
+    this.leaveData.getLeaves().subscribe(res => {
+        res.forEach((element: any) => {
+          if(element.name === this.name){     
+            this.leave = element; 
+          }
+        })
     })
   }
 }

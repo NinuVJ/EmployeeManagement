@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { constant } from 'src/app/core/constant/constant';
 
 @Component({
   selector: 'app-edit-details',
@@ -13,7 +14,6 @@ export class EditDetailsComponent implements OnInit {
   employeeDetails: any;
   currentEmployeeDetails: any;
   userId: any;
-  public role = "employee";
 
   @ViewChild('employeeForm') form: NgForm | undefined;
 
@@ -30,7 +30,7 @@ export class EditDetailsComponent implements OnInit {
 
       this.userId = this.currentEmployeeDetails.id;
       console.log("current user id = " + this.userId);
-      this.http.get('http://localhost:3000/employees/' + this.userId).subscribe(data => {
+      this.http.get(constant.apiEndPoint.allEmployees + this.userId).subscribe(data => {
         this.employeeDetails = data;
 
         this.form?.setValue({
@@ -51,7 +51,7 @@ export class EditDetailsComponent implements OnInit {
   }
 
   onUpdateEmployee(details: {}) {
-    this.http.put('http://localhost:3000/employees/' + this.userId, details).subscribe();
+    this.http.put(constant.apiEndPoint.allEmployees + this.userId, details).subscribe();
 
     Swal.fire({
       position: 'center',

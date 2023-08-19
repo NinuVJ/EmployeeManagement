@@ -41,9 +41,9 @@
   ],
   "employees": [
     {
-      "designation": "Web Developer",
+      "designation": "App Developer",
       "name": "Ninu John",
-      "age": "27",
+      "age": "26",
       "dob": "2023-08-04",
       "email": "ninujohnson247@gmail.com",
       "mobile": "+91 7025498383",
@@ -75,6 +75,8 @@
       "mobile": "+91 9995268130",
       "gender": "female",
       "bloodGroup": "AB+ve",
+      "_image": "C:\\fakepath\\dp3.jpeg",
+      "role": "employee",
       "id": 3
     },
     {
@@ -141,6 +143,19 @@
       "_image": "C:\\fakepath\\dp1.jpeg",
       "role": "hr",
       "id": 8
+    },
+    {
+      "designation": "Web Developer",
+      "name": "Eza",
+      "age": "22",
+      "dob": "2023-08-10",
+      "email": "eza@gmail.com",
+      "mobile": "+91 7027430101",
+      "gender": "female",
+      "bloodGroup": "AB+ve",
+      "_image": "C:\\fakepath\\dp4.jpeg",
+      "role": "employee",
+      "id": 9
     }
   ],
   "leaves": [
@@ -149,7 +164,7 @@
       "leaveFrom": "2023-08-17",
       "leaveTo": "2023-08-19",
       "reason": "sick",
-      "status": "Pending",
+      "status": "Approved",
       "name": "Ninu",
       "designation": "Web Developer",
       "appliedOn": "8/16/2023",
