@@ -42,10 +42,11 @@ export class EditDetailsComponent implements OnInit {
           mobile: this.employeeDetails.mobile,
           gender: this.employeeDetails.gender,
           bloodGroup: this.employeeDetails.bloodGroup,
-          _image : this.employeeDetails._image,
-          role : this.employeeDetails.role
+          role : this.employeeDetails.role,
+          _image : this.employeeDetails._image
         });
-
+        console.log(this.employeeDetails.role);
+        
       });
     }
   }

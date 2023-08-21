@@ -28,8 +28,9 @@ export class RegisterComponent {
         this.errorMsg ="Please fill the fields"
       }else {
         this.registerService.registerUser(data).subscribe((res) => {
-          console.log(res)
         })
+        alert("Registration success");
+        
       }
     })
   }

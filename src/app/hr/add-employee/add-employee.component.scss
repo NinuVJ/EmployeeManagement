@@ -1,4 +1,4 @@
-@import '../../employee/edit-details/edit-details.component.scss';
+@import '../../shared/employeeForm.scss';
 
 .add-form .form-footer {
   background-color: #EFF0F1;
@@ -13,4 +13,7 @@
   color: #999;
   font-style: italic;
   font-weight: thin;
+}
+.msg{
+  color: red;
 }

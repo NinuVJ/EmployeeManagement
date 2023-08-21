@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { EmployeeDataService } from '../../core/services/employee-data.service';
+import { NgForm } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-employee',
@@ -9,7 +11,20 @@ import { EmployeeDataService } from '../../core/services/employee-data.service';
 export class AddEmployeeComponent {
   employees: any;
   fileName!: File;
-  public role = "employee";
+
+  public newEmployee = {
+    designation: '',
+    name: '',
+    age: '',
+    dob: '',
+    email: '',
+    mobile: '',
+    gender: '',
+    bloodGroup: '',
+    _image: '',
+    role: 'employee'
+  };
+
   constructor(private employeeData: EmployeeDataService) { }
 
   onFileSelected(e: any) {
@@ -21,10 +36,17 @@ export class AddEmployeeComponent {
       }
     }
   }
-
-  getEmployeeFormData(data: any) {
-    this.employeeData.saveEmployee(data).subscribe((result) => {
-    })
+  getEmployeeFormData(employeeForm: NgForm) {
+    if (employeeForm.valid) {
+      this.employeeData.saveEmployee(this.newEmployee).subscribe((result) => {
+        Swal.fire(
+          'Added!',
+          'New employee added.',
+          'success'
+        )
+      })
+      employeeForm.resetForm();
+    }
   }
 
 }

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import axios from 'axios';
 import { constant } from 'src/app/core/constant/constant';
 
 @Component({
@@ -25,19 +24,13 @@ export class EmployeeListComponent {
   }
   getSelectedValue(details: string, id: string) {
 
-    const updateLeaveStatus = async () => {
-      const leaveId = id;
-      const updateData = { status: details };
-
-      try {
-        const response = await axios.patch(constant.apiEndPoint.allLeaves+leaveId, updateData);
-        console.log('Leave status updated successfully:', response.data);
-      } catch (error: any) {
-        console.error('Error updating leave status:', error.response.data);
-      }
-    };
-    updateLeaveStatus();
-
+    const leaveId = id;
+    try {
+      this.http.patch(constant.apiEndPoint.allLeaves + leaveId, { "status": details }).subscribe();
+      alert("Leave status updated.")
+    } catch (error: any) {
+      console.error('Error updating leave status');
+    }
   }
 
 }

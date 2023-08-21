@@ -33,7 +33,6 @@ export class EmployeeDetailsComponent {
   onEditClicked(id: string) {
     this.currentEmployeeId = id;
     let currentEmployee = this.employeeDetails.find((p: { id: string; }) => { return p.id === id });
-    console.log(currentEmployee);
 
     this.form?.setValue({
       designation: currentEmployee.designation,
@@ -44,8 +43,8 @@ export class EmployeeDetailsComponent {
       mobile: currentEmployee.mobile,
       gender: currentEmployee.gender,
       bloodGroup: currentEmployee.bloodGroup,
-      _image : currentEmployee._image,
-      role : currentEmployee.role
+      role : currentEmployee.role,
+      _image : currentEmployee._image
     });
   }
 

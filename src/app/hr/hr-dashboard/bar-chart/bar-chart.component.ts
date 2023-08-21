@@ -28,7 +28,6 @@ export class BarChartComponent implements OnInit {
         if (element.designation === 'App Developer' && element.status === 'Approved') {
           this.app++;
         } else if (element.designation === 'Web Developer'  && element.status === 'Approved') {
-          console.log(element, '2');
           this.web++;
         } else if (element.designation === 'UI/UX Designer'  && element.status === 'Approved') {
           this.designer++;

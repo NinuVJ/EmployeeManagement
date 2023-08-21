@@ -1,5 +1,5 @@
 <div class="leave-container">
-    <form class="add-form" #leaveForm="ngForm" (ngSubmit)="getLeaveFormData(leaveForm.value)">
+    <form [formGroup]="leaveForm" (ngSubmit)="onSubmit()" #f="ngForm" class="add-form" >
         <!-- form header -->
         <div class="form-header">
             <h1>Leave Application</h1>
@@ -11,33 +11,33 @@
             <!-- Leave Type -->
             <div class="form-group">
                 <label for="type" class="label-title">Type of Leave</label>
-                <select class="form-input" ngModel name="type">
+                <select name ="type" formControlName="type" class="form-input" >
                     <option value="sick">Sick Leave</option>
                     <option value="casual">Casual Leave</option>
                 </select>
+                <div *ngIf="f.submitted && leaveForm.controls['type'].errors" class="alert">Leave Type Required</div>
             </div>
             <!-- Leave Date -->
             <div class="horizontal-group">
                 <div class="form-group left">
                     <label for="start" class="label-title">Leave From</label>
-                    <input type="date" ngModel name="leaveFrom" id="start" class="form-input">
+                    <input type="date" name ="leaveFrom" formControlName="leaveFrom" id="start" class="form-input">
+                    <div *ngIf="f.submitted && leaveForm.controls['leaveFrom'].errors" class="alert">Leave Date Required</div>
                 </div>
                 <div class="form-group right">
                     <label for="end" class="label-title">Leave To</label>
-                    <input type="date" ngModel name="leaveTo" id="end" class="form-input">
+                    <input type="date" name="leaveTo" formControlName="leaveTo" id="end" class="form-input">
+                    <div *ngIf="f.submitted && leaveForm.controls['leaveTo'].errors" class="alert">Leave Date Required</div>
                 </div>
             </div>
             <!-- Reason -->
             <div class="form-group">
                 <label for="reason" class="label-title">Reason for Leave</label>
-                <textarea class="form-input" rows="4" cols="50" style="height:auto" ngModel name="reason"></textarea>
+                <textarea class="form-input" rows="4" cols="50" style="height:auto" name="reason" formControlName="reason"></textarea>
+                <div *ngIf="f.submitted && leaveForm.controls['reason'].errors?.['required']" class="alert">Reason Required</div>
+                <div *ngIf="f.submitted && leaveForm.controls['reason'].errors?.['maxlength']" class="alert">Exceed the length!</div>
             </div>
         </div>
-        <input type="hidden" [(ngModel)]="status" name="status">
-        <input type="hidden" [(ngModel)]="name" name="name">
-        <input type="hidden" [(ngModel)]="designation" name="designation">
-        <input type="hidden" [(ngModel)]="appliedOn" name="appliedOn">
-        <!-- form footer -->'
         <div class="form-footer">
             <button type="submit" class="btn">Apply</button>
         </div>
